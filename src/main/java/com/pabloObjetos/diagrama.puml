@@ -1,0 +1,52 @@
+@startuml
+
+abstract class ItemBiblioteca{
+abstract prestar()
+abstract devolver()
+abstract calcularMultas()
+}
+
+class Libro  {
+-titulo
+-autor
+-numeroDePaginas
+-prestado
+
++mostrarInformacion()
+}
+class Revista {
+}
+class Pelicula {
+}
+class Biblioteca{
+-Array[] Libro catalogoLibros
+
++agregarLibrosCatalogo()
++motrarCatalogoLibros()
+
+
+
+}
+class Persona{
+-nombre
+-apellido
+-Array[] listaLibros
+}
+interface Catalogable{
++obtenerTitulo()
++obtenerAutor()
++obtenerGenero()
+}
+
+
+class Libro extends ItemBiblioteca implements Catalogable
+class Revista extends ItemBiblioteca implements Catalogable
+class Pelicula extends ItemBiblioteca implements Catalogable
+class Biblioteca extends ItemBiblioteca
+class Persona extends ItemBiblioteca
+
+note top of ItemBiblioteca: clase abstracta
+
+
+
+@enduml
